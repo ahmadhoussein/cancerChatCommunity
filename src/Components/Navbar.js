@@ -19,11 +19,17 @@ function Navbar() {
 
   const handleChatBtnClick = () => {
     if (!isButtonDisabled) {
+      // Disable the button
+      setIsButtonDisabled(true);
+  
+      // Show a toast message
       toast.info("Experiencing high traffic, Please wait a moment.", {
         position: toast.POSITION.TOP_CENTER,
-        onOpen: () => setIsButtonDisabled(true),
-        onClose: () => setIsButtonDisabled(false),
+        onClose: () => setIsButtonDisabled(false), // Enable the button when the toast is closed
       });
+  
+      // Open the link in a new window or tab
+      window.open("https://y99.in/r/1255629", "_blank");
     }
   };
 
